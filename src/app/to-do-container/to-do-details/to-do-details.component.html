@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-body">
+    <h4>To Do Details</h4>
+    <p><strong>Title:</strong></p>
+    <p>{{toDo.title}}</p>
+    <p><strong>Description:</strong></p>
+    <p>{{toDo.description}}</p>
+    <div class="buttons">
+      <div class="btn btn-outline-danger button" (click)="deleteToDo.emit(toDo.id)">Delete</div>
+      <div *ngIf = "!toDo.done" class="btn btn-outline-success button" (click)="markAsDone.emit(toDo.id)">Mark as Done</div>
+    </div>
+  </div>
+</div>
+
+

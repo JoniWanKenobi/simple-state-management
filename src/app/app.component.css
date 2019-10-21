@@ -1,0 +1,8 @@
+.buttons{
+  display: flex;
+  align-content: stretch;
+}
+
+.button{
+  flex: 50;
+}

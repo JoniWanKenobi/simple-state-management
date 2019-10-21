@@ -1,0 +1,11 @@
+<div class="container" *ngIf = "{toDos: toDos$ | async, selectedToDo: selectedToDo$ | async} as asyncData">
+  <app-new-to-do (add)="add($event)"></app-new-to-do>
+  <div class="row">
+    <div class="col" *ngIf="asyncData['toDos'] ">
+      <app-to-do-list [toDos]="asyncData.toDos" [selectedToDo]="asyncData.selectedToDo" (select)="select($event)"></app-to-do-list>
+    </div>
+    <div class="col" *ngIf="asyncData['selectedToDo']">
+      <app-to-do-details [toDo]="asyncData.selectedToDo" (markAsDone)="markAsDone($event)" (deleteToDo)="deleteToDo($event)"></app-to-do-details>
+    </div>
+  </div>
+</div>

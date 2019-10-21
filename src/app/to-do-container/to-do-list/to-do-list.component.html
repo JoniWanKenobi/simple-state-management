@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-body">
+    <h4>To Do List</h4>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item list-group-item-action" *ngFor="let toDo of toDos" [class.list-group-item-dark]="selectedToDo?.id === toDo.id" (click)="select.emit(toDo.id)">
+        <p *ngIf="!toDo.done">{{toDo.title}}</p>
+        <p class="text-muted" *ngIf="toDo.done"><s> {{toDo.title}}</s></p> 
+      </li>
+    </ul>
+  </div>
+</div>

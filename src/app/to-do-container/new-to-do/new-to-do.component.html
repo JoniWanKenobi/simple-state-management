@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-body">
+    <div class="buttons">
+      <button *ngIf="!showForm" class="btn btn-success button" (click)="showForm = true">Add To Do</button>
+    </div>
+    <div *ngIf="showForm">
+      <h4>New To Do</h4>
+      <label>Title</label>
+      <input type="text" class="form-control" [(ngModel)]="toDo.title">
+      <label>Description</label>
+      <textarea class="form-control" cols="30" rows="10" [(ngModel)]="toDo.description"></textarea>
+      <div class="buttons">
+        <button class="btn btn-outline-dark button" (click)="showForm = false">Cancel</button>
+        <button class="btn btn-outline-success button" (click)="addToDo(toDo)" [disabled]="!toDo.title.length">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
